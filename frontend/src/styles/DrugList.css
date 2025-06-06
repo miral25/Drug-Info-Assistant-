@@ -1,0 +1,11 @@
+/* DrugList.css */
+
+.letter-btn {
+    min-width: 36px;
+  }
+  
+  .drug-item {
+    cursor: pointer;
+    text-align: left;
+  }
+  

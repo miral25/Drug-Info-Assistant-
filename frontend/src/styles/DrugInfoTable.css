@@ -1,0 +1,102 @@
+/* Core styling */
+.drug-info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.label-cell {
+  width: 30%;
+  vertical-align: top;
+  text-align: justify;
+}
+
+.value-cell {
+  vertical-align: top;
+  text-align: justify;
+}
+
+.value-array,
+.value-object,
+.value-text {
+  white-space: pre-wrap;
+  text-align: justify;
+}
+
+.value-item {
+  margin-bottom: 4px;
+}
+
+/* Scroll buttons */
+.scroll-to-top-btn,
+.scroll-to-bottom-btn {
+  position: fixed;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease;
+}
+
+.scroll-to-top-btn {
+  bottom: 70px;
+  left: 20px;
+}
+
+.scroll-to-bottom-btn {
+  bottom: 20px;
+  left: 20px;
+}
+
+.scroll-to-top-btn:hover,
+.scroll-to-bottom-btn:hover {
+  background-color: #4b8bec;
+}
+
+/* Sub-table inside openfda */
+.sub-table td {
+  vertical-align: top;
+  background-color: #fdfdfd;
+  text-align: left;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* FDA HTML styling */
+.fda-html-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.fda-html-content td,
+.fda-html-content th {
+  border: 1px solid #ccc;
+  padding: 10px;
+  vertical-align: top;
+  text-align: left;
+  white-space: normal;
+}
+
+.fda-html-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.fda-html-content li {
+  text-align: justify;
+  margin-bottom: 4px;
+  padding-left: 0;
+}
+
+/* Paragraph styling inside FDA fields */
+.fda-html-content p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
