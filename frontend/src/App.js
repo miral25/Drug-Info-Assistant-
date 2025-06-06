@@ -7,6 +7,8 @@ import './App.css';
 function App() {
   const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
+  console.log("API Base:", import.meta.env.VITE_API_BASE_URL);
+
   useEffect(() => {
     // Just test a basic endpoint
     fetch(`${API_BASE}/api/drugs`)
