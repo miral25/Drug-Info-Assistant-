@@ -16,8 +16,8 @@ function DrugList() {
   // Initial fetch
   useEffect(() => {
     Promise.all([
-      fetch('http://localhost:5000/api/drugs').then((res) => res.json()),
-      fetch('http://localhost:5000/api/brands').then((res) => res.json()),
+      fetch('/api/drugs').then((res) => res.json()),
+      fetch('/api/brands').then((res) => res.json()),
     ])
       .then(([gen, brand]) => {
         const sortedGen = [...gen].sort((a, b) => a.localeCompare(b));

@@ -10,7 +10,7 @@ function DrugDetails() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/drug/${name}`)
+    fetch(`/api/drug/${name}`)
       .then(res => res.json())
       .then(data => {
         if (data.error) {
