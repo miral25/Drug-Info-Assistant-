@@ -9,10 +9,8 @@ function DrugDetails() {
   const [drug, setDrug] = useState(null);
   const [error, setError] = useState(null);
 
-  const API_BASE = import.meta.env.VITE_API_BASE_URL;
-
   useEffect(() => {
-    fetch(`${API_BASE}/drug/${name}`)
+    fetch(`http://localhost:5000/api/drug/${name}`)
       .then(res => res.json())
       .then(data => {
         if (data.error) {
@@ -30,6 +28,7 @@ function DrugDetails() {
 
       {error && <p className="text-danger mt-3">{error}</p>}
 
+      {/* Bootstrap table will be rendered inside this */}
       {drug && (
         <div className="table-responsive">
           <DrugInfoTable data={drug} />
@@ -41,7 +40,6 @@ function DrugDetails() {
           &larr; Back to List
         </Link>
       </div>
-
       <ChatBotWidget />
     </div>
   );

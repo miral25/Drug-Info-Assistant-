@@ -11,14 +11,13 @@ function DrugList() {
   const [selectedLetter, setSelectedLetter] = useState('All');
   const [loading, setLoading] = useState(true);
 
-  const API_BASE = import.meta.env.VITE_API_BASE_URL;
   const navigate = useNavigate();
 
   // Initial fetch
   useEffect(() => {
     Promise.all([
-      fetch(`${API_BASE}/drugs`).then((res) => res.json()),
-      fetch(`${API_BASE}/brands`).then((res) => res.json()),
+      fetch('http://localhost:5000/api/drugs').then((res) => res.json()),
+      fetch('http://localhost:5000/api/brands').then((res) => res.json()),
     ])
       .then(([gen, brand]) => {
         const sortedGen = [...gen].sort((a, b) => a.localeCompare(b));
@@ -31,7 +30,7 @@ function DrugList() {
         console.error(err);
         setLoading(false);
       });
-  }, [API_BASE]);
+  }, []);
 
   // Filter logic
   useEffect(() => {
@@ -81,6 +80,7 @@ function DrugList() {
     <div className="container my-5">
       <h1 className="text-center mb-4">DRUG INFORMATION PROJECT</h1>
 
+      {/* Search bar with icon */}
       <form onSubmit={(e) => e.preventDefault()} className="mb-3 d-flex" role="search">
         <input
           type="text"
@@ -99,6 +99,7 @@ function DrugList() {
         </button>
       </form>
 
+      {/* Alphabet filter */}
       <div className="d-flex flex-wrap justify-content-center gap-2 mb-4">
         {alphabet.map((letter) => (
           <button
@@ -121,6 +122,7 @@ function DrugList() {
         </button>
       </div>
 
+      {/* Brand & Generic lists */}
       <div className="row">
         <div className="col-md-6 text-start">
           <h5 className="text-center">BRANDED DRUG NAMES</h5>
