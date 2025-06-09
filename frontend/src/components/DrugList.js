@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/DrugList.css';
 
+const API_BASE = "http://18.189.105.209:5000";
+
 function DrugList() {
   const [generic, setGeneric] = useState([]);
   const [brand, setBrand] = useState([]);
@@ -16,8 +18,8 @@ function DrugList() {
   // Initial fetch
   useEffect(() => {
     Promise.all([
-      fetch('/api/drugs').then((res) => res.json()),
-      fetch('/api/brands').then((res) => res.json()),
+      fetch(`${API_BASE}/api/drugs`).then((res) => res.json()),
+      fetch(`${API_BASE}/api/brands`).then((res) => res.json()),
     ])
       .then(([gen, brand]) => {
         const sortedGen = [...gen].sort((a, b) => a.localeCompare(b));

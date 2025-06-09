@@ -4,13 +4,15 @@ import DrugInfoTable from './DrugInfoTable';
 import '../styles/DrugDetails.css';
 import ChatBotWidget from './ChatBotWidget';
 
+const API_BASE = "http://18.189.105.209:5000";
+
 function DrugDetails() {
   const { name } = useParams();
   const [drug, setDrug] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/drug/${name}`)
+    fetch(`${API_BASE}/api/drug/${name}`)
       .then(res => res.json())
       .then(data => {
         if (data.error) {
